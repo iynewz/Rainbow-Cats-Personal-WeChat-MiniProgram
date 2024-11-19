@@ -143,14 +143,16 @@ Page({
       })
       return
     }
-    if (this.data.credit <= 0) {
-      wx.showToast({
-        title: '一定要有积分',
-        icon: 'error',
-        duration: 2000
-      })
-      return
-    }else{
+    // if (this.data.credit <= 0) {
+    //   wx.showToast({
+    //     title: '一定要有积分',
+    //     icon: 'error',
+    //     duration: 2000
+    //   })
+    //   return
+    // }
+    
+    else{
         await wx.cloud.callFunction({name: 'addElement', data: this.data}).then(
             () => {
                 wx.showToast({
